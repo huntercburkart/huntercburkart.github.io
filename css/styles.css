@@ -38,8 +38,9 @@ nav
   background-color: snow;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
   box-shadow: 3px 0 3px rgba(0, 0, 0, 0.35);
-
-  /*  fix position */
+  position: sticky;
+  top: 0;
+  width: 100%;
 
 }
 
@@ -65,4 +66,14 @@ main
 p 
 {
   line-height: 1.2em;
+}
+
+div.container
+{
+	text-align: center;
+
+ul.navul 
+{
+  display: inline-block;
+  text-align: left;
 }
