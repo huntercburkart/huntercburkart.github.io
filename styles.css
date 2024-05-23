@@ -2,16 +2,23 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
-	background-color: #222;
+	background-image: url('images/background.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .header {
-	background-color: #333;
+	background-color: rgba(51, 51, 51, 0.8);
 	color: #fff;
 	padding: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 .header nav {
@@ -37,8 +44,16 @@ body {
 	color: #333;
 }
 
+.content-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 50px;
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 .hero {
-	background-image: url('background.png');
+	background-image: url('images/background.png');
 	background-size: cover;
 	background-position: center;
 	min-height: 100vh;
@@ -103,24 +118,12 @@ body {
 .panel {
 	margin: 20px;
 	flex: 1;
-	max-width: 300px;
+	max-width: 400px;
 	background-color: rgba(255, 255, 255, 0.1);
 	border-radius: 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	transition: transform 0.3s ease;
-}
-
-@media (max-width: 768px) {
-	.panel {
-		max-width: 400px;
-	}
-}
-
-@media (max-width: 480px) {
-	.panel {
-		max-width: 300px;
-	}
 }
 
 .panel:hover {
@@ -131,6 +134,10 @@ body {
 .social-links h2 {
 	font-size: 24px;
 	margin-bottom: 10px;
+}
+
+.twitter-feed .twitter-timeline {
+	width: 100% !important; /* This line ensures the Twitter feed scales with the panel */
 }
 
 .social-links ul {
@@ -152,9 +159,98 @@ body {
 	color: #f1c40f;
 }
 
+h1 {
+	text-align: center;
+	font-family: "Press Start 2P", system-ui;
+	font-size: 36px;
+	color: #fff;
+	margin-top: 50px;
+}
+
+.game-panels {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 50px;
+}
+
+.game-panel {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	margin: 20px;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease;
+}
+
+.game-panel:hover {
+	transform: translateY(-5px);
+}
+
+.game-panel-content {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-logo {
+	max-width: 80%;
+	max-height: 80%;
+}
+
+.game-panel-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: background-color 0.3s ease;
+}
+
+.game-panel:hover .game-panel-overlay {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.about-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 50px;
+	color: #fff;
+	line-height: 1.6;
+	background-color: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+
+@media (max-width: 960px) {
+	.about-content {
+		max-width: 90%;
+	}
+}
+
 @media (max-width: 768px) {
+	.panel {
+		max-width: 400px;
+	}
+	
 	.update-container {
 		flex-direction: column;
 		align-items: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.panel {
+		max-width: 300px;
+	}
+	.about-content {
+		max-width: 100%;
 	}
 }
